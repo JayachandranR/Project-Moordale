@@ -1,4 +1,4 @@
-# Web-dev
+# Project-Moordale
   
 Moordale Secondary School is a location on the Netflix series Sex Education. I took this as my inspiration and created this responsive website. 
 
