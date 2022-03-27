@@ -16,3 +16,6 @@ Fonts used for paragraph - Noto Serif Display, serif.
 Fonts used for the menu - Libre Franklin, sans-serif;
 
 
+Thanks reading :)
+
+
