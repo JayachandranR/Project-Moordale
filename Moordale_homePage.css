@@ -7,6 +7,10 @@ Font for Menu - font-family: 'Libre Franklin', sans-serif;
     margin: 0;
     padding: 0;
 }
+/* hide scroll bar */
+::-webkit-scrollbar{
+    display: none;
+}
 body{
     font-family: 'Noto Serif Display', serif;
     background-color: #070122;
