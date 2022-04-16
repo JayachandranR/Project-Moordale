@@ -245,11 +245,11 @@
                 </div>
             </div>
             <div class="contact-col">
-                <form action="">
-                    <input type="text" placeholder="Enter Your Name" required>
-                    <input type="email" placeholder="Enter Your Email" required>
-                    <input type="text" placeholder="Enter Your Major" required>
-                    <textarea rows="8" placeholder="Message" required></textarea>
+                <form onsubmit="sendEmail(); reset();">
+                    <input type="text" id="name" placeholder="Enter Your Name" required>
+                    <input type="email" id="email" placeholder="Enter Your Email" required>
+                    <input type="text" id="subject" placeholder="Enter Your Major" required>
+                    <textarea rows="8" id="message" placeholder="Message" required></textarea>
                     <button type="submit" class="hero-btn red-btn">Send Message</button>
                 </form>
             </div>
@@ -268,8 +268,32 @@
         </div>
         <p>Follow us for more updates</p>
     </section>
-    <!-- javascript for toggle menu -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
+        // javascript for sending email
+        function sendEmail(){
+            Email.send({
+            secureToken : "c440a397-27e2-4ae7-801f-573d835f977e",
+            
+            To : 'jayachandran2472@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "User Enquiry from Moordale Secondary",
+            Body : "Name : " + document.getElementById("name").value
+            + "<br> Email : " + document.getElementById("email").value
+            + "<br> Major : " + document.getElementById("subject").value
+            + "<br> Message : " + document.getElementById("message").value
+        }).then(
+        message => {
+            if(message == 'OK'){ alert('Your emailhas been sent!')}
+            else{ console.error(message);
+            alert('there is error at sending message')
+        }
+        }
+        );
+
+        }
+
+        //  javascript for toggle menu 
         var navLinks = document.getElementById("navLinks");
         function showMenu(){
             navLinks.style.right = "0";
@@ -287,4 +311,3 @@
 
 
 
-<!-- http://localhost:5500/Responsive_Web_Design/Moordale_homePage.html -->
